@@ -4,17 +4,26 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
+	
+	@BeforeSuite
+	public void beforeSuite() {
+		DOMConfigurator.configure("log4j.xml");  //this initializes log4j.xml
+	}
 
 	@BeforeTest
 	public static void launchConfig() throws IOException {

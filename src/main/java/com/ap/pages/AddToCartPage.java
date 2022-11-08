@@ -30,7 +30,8 @@ public class AddToCartPage extends TestBase{
 	}
 	
 	public void enterQuantityAction() {
-		quantity.sendKeys("1");
+		quantity.clear();
+		quantity.sendKeys("3");
 	}
 	
 	public void selectSizeAction() {

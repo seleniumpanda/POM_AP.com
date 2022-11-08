@@ -50,7 +50,7 @@ public class AddressPageTest extends TestBase {
 		double unitprice = orderpage.getUnitPrice();
 		double totalprice = orderpage.getTotalPrice();
 		double totalExpectedPrice = (unitprice * 3) + 2;
-		//softassert.assertEquals(totalprice, totalExpectedPrice);
+		softassert.assertEquals(totalprice, totalExpectedPrice);
 		addresspage = orderpage.clickonCheckout();
 		softassert.assertAll();
 	}
